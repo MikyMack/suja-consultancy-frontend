@@ -279,3 +279,29 @@ $(window).on('load',function(){
     $('.page-loading').fadeOut();
 
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const logoScroller = document.getElementById("logoScroller");
+    const logos = document.querySelectorAll(".entity-icon");
+    
+    // Clone all logos and append to create a seamless loop
+    logos.forEach(logo => {
+      const clone = logo.cloneNode(true);
+      logoScroller.appendChild(clone);
+    });
+    
+    // Function to reset animation if needed
+    function checkPosition() {
+      const firstLogoWidth = logos[0].offsetWidth + 40; // include margin
+      const scrollPosition = logoScroller.scrollLeft;
+      const totalWidth = logoScroller.scrollWidth;
+      
+      // If we've scrolled past all original logos, reset position
+      if (scrollPosition >= totalWidth / 2) {
+        logoScroller.style.transform = "translateX(0)";
+      }
+    }
+    
+    // Check position periodically
+    setInterval(checkPosition, 1000);
+  });

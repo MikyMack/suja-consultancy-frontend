@@ -53,6 +53,7 @@ header {
 }
 .responsive-header {
     display: block;
+    position: fixed;
 }
 .blogpost.style2 .blog-postdetail {
     padding-left: 30px;
@@ -1129,6 +1130,9 @@ select {
     float: left;
     width: 100%;
     display: inline-block;
+}
+.ft-logo{
+    margin-top: 1rem;
 }
 .progress-sec.style2 > p {
     float: left;
