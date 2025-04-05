@@ -305,3 +305,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // Check position periodically
     setInterval(checkPosition, 1000);
   });
+
+
+//   resume upload input
+
+
+
