@@ -145,25 +145,25 @@
 							</ul>
 							<div class="job-search-sec style3">
 								<div class="job-search banner-main style2">
-									<h3>Find the career you deserve</h3>
-									<span>Your job search starts and ends with us.</span>
+									<h3 class="banner-title">Find the career you deserve</h3>
+									<span class="banner-dis">Your job search starts and ends with us.</span>
 									<div class="search-job2 style2">	
 										<form>
 											<div class="row no-gape">
 												<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 													<div class="job-field">
 														<label>Search Keywords</label>
-														<input type="text" placeholder="Job title, e.g. web design" />
+														<input type="text" placeholder="Job title, category,companies" />
 													</div>
 												</div>
 												<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
 													<div class="job-field">
-														<label>Categories</label>
+														<label>Select experiance</label>
 														<select data-placeholder="Filter by specialisms e.g. developer, designer" class="chosen-city">
-															<option>Banking</option>
-															<option>Estate</option>
-															<option>Retail</option>
-															<option>Agency</option>
+															<option>Fresher(less than 1 year)</option>
+															<option>1 year-3year</option>
+															<option>3year-6year</option>
+															<option>6year-9year</option>
 														</select>
 													</div>
 												</div>
@@ -395,54 +395,56 @@
 
 
 	<section>
-		<div class="block ">
+		<div class="block">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="heading">
 							<h2>Trending Jobs</h2>
 							<span>Discover the hottest job opportunities in demand right now.</span>
-						</div><!-- Heading -->
+						</div>
 						<div class="top-company-sec">
 							<div class="row" id="companies-carousel">
 								<div class="col-lg-3">
-								
 									<div class="top-compnay style2">
-										<img src="assets/images/poster/poster-2.jpg" alt="" />
-										
-									</div><!-- Top Company -->
-								</div>
-								<div class="col-lg-3">
-									<div class="top-compnay style2">
-										<img src="assets/images/poster/poster-2.jpg" alt="" />
-										
+										<img src="assets/images/poster/poster-2.jpg" alt="" class="modal-img" />
 									</div>
 								</div>
 								<div class="col-lg-3">
 									<div class="top-compnay style2">
-										<img src="assets/images/poster/poster-2.jpg" alt="" />
-										
+										<img src="assets/images/poster/poster-2.jpg" alt="" class="modal-img" />
 									</div>
 								</div>
 								<div class="col-lg-3">
 									<div class="top-compnay style2">
-										<img src="assets/images/poster/poster-2.jpg" alt="" />
-										
+										<img src="assets/images/poster/poster-2.jpg" alt="" class="modal-img" />
 									</div>
 								</div>
 								<div class="col-lg-3">
 									<div class="top-compnay style2">
-										<img src="assets/images/poster/poster-2.jpg" alt="" />
-										
+										<img src="assets/images/poster/poster-2.jpg" alt="" class="modal-img" />
+									</div>
+								</div>
+								<div class="col-lg-3">
+									<div class="top-compnay style2">
+										<img src="assets/images/poster/poster-2.jpg" alt="" class="modal-img" />
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>	
+			</div>
 		</div>
 	</section>
+	
+	<!-- Modal -->
+	<div id="imageModal" class="modal">
+		<span class="close">&times;</span>
+		<a class="prev">&#10094;</a>
+		<a class="next">&#10095;</a>
+		<img class="modal-content" id="modalImg">
+	</div>
 	<!-- steps -->
 	<section>
 		<div class="block">
@@ -774,7 +776,70 @@
 	
 	</div>
 </div><!-- SIGNUP POPUP -->
-
+<script>
+    // Wait for the DOM to fully load before accessing elements
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the modal elements
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        const closeBtn = document.getElementsByClassName("close")[0];
+        const images = document.getElementsByClassName("modal-img");
+        const prevBtn = document.getElementsByClassName("prev")[0];
+        const nextBtn = document.getElementsByClassName("next")[0];
+        
+        let currentIndex = 0;
+        
+        // Add click event to all carousel images
+        for (let i = 0; i < images.length; i++) {
+            images[i].onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                currentIndex = i;
+            }
+        }
+        
+        // Function to show previous image
+        function showPrevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            modalImg.src = images[currentIndex].src;
+        }
+        
+        // Function to show next image
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            modalImg.src = images[currentIndex].src;
+        }
+        
+        // Add click events for navigation
+        prevBtn.onclick = showPrevImage;
+        nextBtn.onclick = showNextImage;
+        
+        // Close the modal when clicking the × button
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        // Close the modal when clicking outside the image
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        // Handle keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (modal.style.display === "block") {
+                if (event.key === "Escape") {
+                    modal.style.display = "none";
+                } else if (event.key === "ArrowLeft") {
+                    showPrevImage();
+                } else if (event.key === "ArrowRight") {
+                    showNextImage();
+                }
+            }
+        });
+    });
+</script>
 <script src="js/jquery.min.js" type="text/javascript"></script>
 <script src="js/modernizr.js" type="text/javascript"></script>
 <script src="js/script.js" type="text/javascript"></script>

@@ -3579,8 +3579,20 @@ header.style4 .menu-sec nav > ul > li.menu-item-has-children > a::before {
     bottom: -42px;
 }
 
-.job-search-sec.style3 .style2{margin-bottom: 0px;}
-
+.job-search-sec.style3 .style2{margin-bottom: 6rem;}
+.banner-title{
+margin-bottom: 0px!important;
+position: absolute;
+top:20%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.banner-dis{
+    position: absolute;
+top:30%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
 .job-is.ft {
     margin-top: 12px;
 }
@@ -12475,4 +12487,86 @@ color: white!important;
 .top-company-sec button.slick-next.slick-arrow:hover{
     background-color: #1B61A6!important;
     border: 2px solid white!important; 
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Modal Content */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 50%;
+    max-height: 90vh;
+    
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 1001;
+    background-color: white!important;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Navigation Buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Position the "next" button to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add slightly darker background */
+.close:hover,
+.close:focus,
+.prev:hover,
+.next:hover {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Make images clickable */
+.top-compnay img {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.top-compnay img:hover {
+    opacity: 0.8;
 }

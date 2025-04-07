@@ -141,7 +141,19 @@ header {
     margin-bottom: 10PX;
 }
 
-
+.banner-title{
+    margin-bottom: 0px!important;
+    position: absolute;
+    top:-20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+    .banner-dis{
+        position: absolute;
+    top:-10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
 
 
 }
@@ -470,8 +482,15 @@ select {
 
 .dropdown-field {border:none !important;}
 
-
-
+.modal-content {
+    height: 70vh;
+   max-width: 80%;
+   margin-top: 4rem;
+   
+}
+.close{
+    margin-top: 3rem;
+}
 }
 
 
@@ -958,9 +977,22 @@ select {
     margin-bottom: 60px;
 }
 
+.banner-title{
+    margin-bottom: 0px!important;
+    position: absolute;
+    top:-20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+    .banner-dis{
+        position: absolute;
+    top:-10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
 
 
-
+    .job-search-sec.style3 .style2{margin-bottom: 4rem;}
 
 }
 
@@ -1249,7 +1281,7 @@ select {
 }
 .job-search-sec.style3 {
     left: 0;
-    top: 50px;
+    top: 160px;
     bottom: 0px;
 
     -webkit-transform: none;
@@ -1306,5 +1338,19 @@ select {
 .jobs-section{
     padding-top: 5rem;
 }
+.banner-title{
+    margin-bottom: 0px!important;
+    position: absolute!important;
+    top:3%!important;
+    left: 50%!important;
+    transform: translate(-50%, -50%);
+    }
+    .banner-dis{
+        position: absolute;
+    top:10%;
+    left: 50%;
+    transform: translate(-50%, -50%)!important;
+    }
+.job-search-sec.style3 .style2{margin-bottom: 30rem!important;}
 }
 
