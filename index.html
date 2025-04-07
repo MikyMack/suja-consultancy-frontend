@@ -776,10 +776,11 @@
 	
 	</div>
 </div><!-- SIGNUP POPUP -->
+
+<!-- slider full screeen -->
 <script>
-    // Wait for the DOM to fully load before accessing elements
     document.addEventListener('DOMContentLoaded', function() {
-        // Get the modal elements
+
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("modalImg");
         const closeBtn = document.getElementsByClassName("close")[0];
@@ -789,7 +790,7 @@
         
         let currentIndex = 0;
         
-        // Add click event to all carousel images
+   
         for (let i = 0; i < images.length; i++) {
             images[i].onclick = function() {
                 modal.style.display = "block";
@@ -798,35 +799,35 @@
             }
         }
         
-        // Function to show previous image
+
         function showPrevImage() {
             currentIndex = (currentIndex - 1 + images.length) % images.length;
             modalImg.src = images[currentIndex].src;
         }
         
-        // Function to show next image
+      
         function showNextImage() {
             currentIndex = (currentIndex + 1) % images.length;
             modalImg.src = images[currentIndex].src;
         }
         
-        // Add click events for navigation
+   
         prevBtn.onclick = showPrevImage;
         nextBtn.onclick = showNextImage;
         
-        // Close the modal when clicking the × button
+  
         closeBtn.onclick = function() {
             modal.style.display = "none";
         }
         
-        // Close the modal when clicking outside the image
+   
         modal.onclick = function(event) {
             if (event.target === modal) {
                 modal.style.display = "none";
             }
         }
         
-        // Handle keyboard navigation
+
         document.addEventListener('keydown', function(event) {
             if (modal.style.display === "block") {
                 if (event.key === "Escape") {
