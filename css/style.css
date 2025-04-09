@@ -12533,8 +12533,8 @@ color: white!important;
 }
 
 /* Navigation Buttons */
-.prev,
-.next {
+.prev1,
+.next1 {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -12552,7 +12552,7 @@ color: white!important;
 }
 
 /* Position the "next" button to the right */
-.next {
+.next1 {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
@@ -12560,8 +12560,8 @@ color: white!important;
 /* On hover, add slightly darker background */
 .close:hover,
 .close:focus,
-.prev:hover,
-.next:hover {
+.prev1:hover,
+.next1:hover {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
